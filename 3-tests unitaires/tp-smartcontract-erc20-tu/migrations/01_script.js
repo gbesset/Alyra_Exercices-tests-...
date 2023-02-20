@@ -1,6 +1,8 @@
 // Import du smart contract "SimpleStorage"
-const SimpleStorage = artifacts.require("SimpleStorage");
+const MyToken = artifacts.require("MyToken");
 module.exports = (deployer) => {
   // Deployer le smart contract!
-  deployer.deploy(SimpleStorage);
+  // dans le script il faut mettre une première supply.
+  // Dans tous les cas on déploie le fichier donc il faut la supply
+  deployer.deploy(MyToken, 10000);
 };
