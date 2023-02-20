@@ -54,4 +54,44 @@ contract("MyToken", (accounts) => {
     expect(balanceOwnerAfterTransfer).to.be.bignumber.equal(balanceOwnerBeforeTransfer.sub(amount));
     expect(balanceRecipientAfterTransfer).to.be.bignumber.equal(balanceRecipientBeforeTransfer.add(amount));
   });
+
+  it("check if approval done", async () => {
+    const amount = new BN(100);
+
+    let allowanceBeforeApproval = await MyTokenInstance.allowance(_owner, _recipient);
+
+    expect(allowanceBeforeApproval).to.be.bignumber.equal(new BN(0));
+
+    await MyTokenInstance.approve(_recipient, amount);
+
+    let allowanceAfterApproval = await MyTokenInstance.allowance(_owner, _recipient);
+    expect(allowanceAfterApproval).to.be.bignumber.equal(new BN(amount));
+  });
+
+  it("check if transferFrom done", async () => {
+    const amount = new BN(100);
+
+    await MyTokenInstance.approve(_recipient, amount);
+
+    //ne dois pas modifier les balance
+    let balanceOwnerBeforeTransfer = await MyTokenInstance.balanceOf(_owner);
+    let balanceRecipientBeforeTransfer = await MyTokenInstance.balanceOf(_recipient);
+
+    expect(balanceOwnerBeforeTransfer).to.be.bignumber.equal(_initialSupply);
+    expect(balanceRecipientBeforeTransfer).to.be.bignumber.equal(new BN(0));
+
+    //transfer depuis le compte de l'owner vers le recipient effectué par le recipeint car il a l'approval
+    await MyTokenInstance.transferFrom(_owner, _recipient, amount, { from: _recipient });
+
+    let balanceOwnerAfterTransfer = await MyTokenInstance.balanceOf(_owner);
+    let balanceRecipientAfterTransfer = await MyTokenInstance.balanceOf(_recipient);
+
+    //expect(balanceOwnerAfterTransfer).to.be.bignumber.equal(new BN(9900));
+    expect(balanceOwnerAfterTransfer).to.be.bignumber.equal(balanceOwnerBeforeTransfer.sub(amount));
+    expect(balanceRecipientAfterTransfer).to.be.bignumber.equal(balanceRecipientBeforeTransfer.add(amount));
+  });
+
+  it("check if transferFrom error wwhen approval too large", async () => {
+    //todo
+  });
 });
