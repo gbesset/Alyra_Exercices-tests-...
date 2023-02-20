@@ -1,0 +1,5 @@
+.DS_Store
+
+// ** tous les sous dossiers
+**/node_modules
+**/.env
