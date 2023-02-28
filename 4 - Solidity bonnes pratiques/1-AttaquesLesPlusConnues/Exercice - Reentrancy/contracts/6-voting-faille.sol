@@ -85,7 +85,7 @@ contract Voting is Ownable {
         emit WorkflowStatusChange(WorkflowStatus.VotingSessionStarted, WorkflowStatus.VotingSessionEnded);
     }
 
-    function votesTallied() public flowStatus(WorkflowStatus.VotingSessionEnded) onlyOwner { 
+    function votesTallied() public flowStatus(WorkflowStatus.VotingSessionEnded) onlyOwner {    //FAILLE : cette bouce peut dépasser le gas limit
         uint winningVoteCount = 0;
         for (uint p = 0; p <proposals.length; p++) {
             if (proposals[p].voteCount > winningVoteCount) {

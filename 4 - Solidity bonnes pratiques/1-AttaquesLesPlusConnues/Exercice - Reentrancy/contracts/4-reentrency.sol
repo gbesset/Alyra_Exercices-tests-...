@@ -13,7 +13,7 @@ contract Vault {
     /// @dev Redeem your ETH.
     function redeem() public {
         uint toSend = balances[msg.sender];
-        balances[msg.sender]=0;
+        balances[msg.sender]=0;                         // Condition pour pas boucle de fallback
         msg.sender.call{ value: toSend }("");
     }
 }

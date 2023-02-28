@@ -77,7 +77,7 @@ contract Voting is Ownable {
         voters[msg.sender].hasVoted = true;
         voters[msg.sender].votedProposalId = proposalId;
 
-        if (proposals[proposalId].voteCount > proposals[winningProposalId].voteCount) {
+        if (proposals[proposalId].voteCount > proposals[winningProposalId].voteCount) {                 //CALCUL a chaque fois du winning temporaire
             winningProposalId = proposalId;
         }
 

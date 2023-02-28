@@ -4,7 +4,7 @@ contract auction {
     address highestBidder;
     uint highestBid;
 
-    function bid() payable public {
+    function bid() payable public {         //FAILLE : découper cette fonction pour avoir un call séparé
         require(msg.value >= highestBid);
 
         if (highestBidder != address(0)) {

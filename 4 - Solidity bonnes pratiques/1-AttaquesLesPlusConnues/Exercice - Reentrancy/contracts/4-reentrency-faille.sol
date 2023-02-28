@@ -13,6 +13,6 @@ contract Vault_Faille {
     /// @dev Redeem your ETH.
     function redeem() public {
         msg.sender.call{ value: balances[msg.sender] }("");
-        balances[msg.sender]=0;
+        balances[msg.sender]=0;                                     //FAILLE ! a faire avant
     }
 }
