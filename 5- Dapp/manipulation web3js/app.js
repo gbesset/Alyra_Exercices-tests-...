@@ -15,4 +15,40 @@ web3.eth.getBalance("0x4b984D560387C22f399B76a38edabFE52903E599",(err, wei)=>{
     // 0.042 ether
 });
 
+/*  Partie 2  - Lecture blockchain */
+const address_deploiement = "0x1f9C83F7311c1b0AD188E9925E2705a3B60c4b1d";
+const ABI = [
+	{
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "x",
+				"type": "uint256"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+;
 
+const simpleStorage = new web3.eth.Contract(ABI, address_deploiement);
+
+simpleStorage.methods.get().call((err, data)=>{
+    console.log(data);
+});
