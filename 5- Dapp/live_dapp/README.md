@@ -6,6 +6,19 @@ prendre le .env
 `npm install dotenv @truffle/hdwallet-provider @openzeppelin/contracts @openzeppelin/test-helpers`
 
 
+## TEsts
+receiever imported
+0x677616A76CC618D4E3E321a0aA022d40fDe68A15
+
+receiver local
+0xAC4FC99594c9c19E8BCB8A5B01558F4d90B89672
+
+
+sender
+0x3bFa5C029A762c535906461C8Ad5C94E760DCCA7
+
+
+
 # React Truffle Box
 
 This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.

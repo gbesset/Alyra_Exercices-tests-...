@@ -9,9 +9,12 @@ function EthProvider({ children }) {
   const init = useCallback(
     async artifact => {
       if (artifact) {
+        /** Vient de Metamask */
         const web3 = new Web3(Web3.givenProvider || "ws://localhost:8545");
         const accounts = await web3.eth.requestAccounts();
         const networkID = await web3.eth.net.getId();
+        
+        /** ABI et address */
         const { abi } = artifact;
         let address, contract;
         try {
@@ -30,7 +33,8 @@ function EthProvider({ children }) {
   useEffect(() => {
     const tryInit = async () => {
       try {
-        const artifact = require("../../contracts/SimpleStorage.json");
+        /** Quand on mettra nos RC20 ou autre, il faudra changer ca */
+        const artifact = require("../../contracts/ERC20Token.json");
         init(artifact);
       } catch (err) {
         console.error(err);
