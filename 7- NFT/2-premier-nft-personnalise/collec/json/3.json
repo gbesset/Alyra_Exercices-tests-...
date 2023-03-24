@@ -1,0 +1,16 @@
+{
+    "description":"bonhomme volant cape rouge",
+    "image":"https://gateway.pinata.cloud/ipfs/QmTN7N4qdR428tHznxFhmZ3YKLL968ED2m5Qyeqv5z3Euc/3.png",
+    "name":"BonhommesNFT",
+    "attribute": [
+        {
+            "trait_type":"taille",
+            "value":"180"
+        },
+        { 
+            "trait_type":"accessoire",
+            "value":"cape rouge"
+        }
+    ]
+
+}

@@ -1,0 +1,16 @@
+{
+    "description":"bonhomme maçon",
+    "image":"https://gateway.pinata.cloud/ipfs/QmTN7N4qdR428tHznxFhmZ3YKLL968ED2m5Qyeqv5z3Euc/6.png",
+    "name":"BonhommesNFT",
+    "attribute": [
+        {
+            "trait_type":"taille",
+            "value":"176"
+        },
+        { 
+            "trait_type":"accessoire",
+            "value":"truelle"
+        }
+    ]
+
+}
