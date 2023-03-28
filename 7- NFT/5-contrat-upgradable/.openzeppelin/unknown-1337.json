@@ -1,0 +1,66 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xc188920883f5EcC3FAbe0e92CE0258952bF3c406",
+    "txHash": "0xe258dd8cf0b8ab63bf3706ef90f8991668d5458a93fc2ab569a9f8f401354778"
+  },
+  "proxies": [
+    {
+      "address": "0x8834716C6aBa36cB899D43d975eD1b07ace4c55f",
+      "txHash": "0xa304254637e4dc1d8b5ad9373898e3aaa2cf0477e8690dc5851c6bec03604da9",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xe38563d996EAeE45467a5D79d51b1C7E5f5264F9",
+      "txHash": "0x3f220522602237ca1069d8c16613b07914f0ee39563fd5cd17e4677ae5096f7c",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x13969B6e142F9dE6b0eF49827995902D307386E7",
+      "txHash": "0x38ce3c6a20c6d5dedf1c43be443c44ef5c06c2f37a0c2579934c3508cfcc4808",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "96eaec2138955b52d6a8a3c10a8a9e6ee44963735f2f63a729ca2984c236bb92": {
+      "address": "0xFAED56a14595676D3cDb2E7223a64B20d5B326f8",
+      "txHash": "0x91cb6bfa73a28c3d8d3573eb1545bc66eea624bef815899ae82f4e619d8387ed",
+      "layout": {
+        "solcVersion": "0.8.19",
+        "storage": [
+          {
+            "contract": "SimpleStorage1",
+            "label": "number",
+            "type": "t_uint256",
+            "src": "../project:/contracts/SimpleStorage1.sol:7"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    },
+    "448cd380a6a030466593e1e9ab3c60b92218d665a2ae7872c39dfc961b5f7d7a": {
+      "address": "0xb84834c006c166502767C9b6A97508030de58e7F",
+      "txHash": "0x78da84809cfeeadd5e92b3bffeeee753fa844f1e1647629b89bcae808baa6196",
+      "layout": {
+        "solcVersion": "0.8.19",
+        "storage": [
+          {
+            "contract": "SimpleStorage2",
+            "label": "number",
+            "type": "t_uint256",
+            "src": "../project:/contracts/SimpleStorage2.sol:6"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          }
+        }
+      }
+    }
+  }
+}
